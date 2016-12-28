@@ -17,6 +17,12 @@ Rails.application.routes.draw do
         get '/' => 'api#get_quote'
         get '/:n' => 'api#get_multi_quote'
       end
+      scope '/image' do
+        get '/' => 'api#get_trump_image'
+      end
+      scope '/image/:win' do
+        get '/' => 'api#get_trump_image'
+      end
     end
   end
 end
