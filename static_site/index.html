@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Did Trump actually say it? Who knows! Find out if you can discern real Donald Trump quotes from fake ones in this simple game." />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/styles/_toastgrid.css" />
+    <link rel="stylesheet" type="text/css" href="assets/styles/main.css" />
+    <title>Did Trump Say It?</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <main class="main-grid grid">
+        <section class="begin-container">
+          <h1 class="begin-header col col--centered col--1-of-1">Did Trump say it?</h1>
+          <br>
+          <div class="col col--centered col--1-of-1">
+            <div id="start-button" class="button begin-button button-large">Begin the game</div>
+          </div>
+        </section>
+        <section class="question-container">
+          <h3 id="question-counter" class="col col--centered col--1-of-1">Question 1 of 10</h3>
+          <h2 id="quote" class="col col--centered col--1-of-1">&quot;This is a test quotation that Donald Trump obviously did not say.&quot;</h2>
+          <br />
+          <div class="button choice-button" id="choice-trump">Trump said it</div>
+          <div class="button buttondark choice-button" id="choice-other">Somebody said it</div>
+          <div class="button buttonred choice-button" id="choice-none">Nobody said it</div>
+        </section>
+        <section class="next-question-container">
+        <h1 id="correct-indicator">You were correct!</h1>
+        <h2 id="correct-answer-reveal">It was said by Trump!</h2>
+        <br />
+        <img id="between-img" src="assets/img/trump-right-1.jpg" alt="Trump-image">
+        <br />
+        <div id="next-question" class="button next-button">Next question</div>
+        </section>
+        <section class="game-over-container">
+          <h1 id="game-over-heading">Game over!</h1>
+          <h2 id="final-score">Your final score was:</h2>
+          <br />
+          <h1 class="mega" id="scorenum">500</h1>
+
+          <div id="play-again" class="button begin-button button-large">Play again</div>
+        </section>
+        <br>
+      </main>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

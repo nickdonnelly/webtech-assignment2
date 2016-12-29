@@ -23,6 +23,10 @@ Rails.application.routes.draw do
       scope '/image/:win' do
         get '/' => 'api#get_trump_image'
       end
+      get '/endgame' => 'api#invalid_request_error'
+      scope '/endgame/:rightcount' do
+        get '/' => 'api#get_endgame_quote'
+      end
     end
   end
 end
