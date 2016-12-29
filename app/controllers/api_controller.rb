@@ -110,22 +110,4 @@ class ApiController < ApplicationController
     end
     return value
   end
-
-  # def generate_quote_json(n)
-  #   value = []
-  #   r = Random.new
-  #   for i in 0..n
-  #     quote = {}
-  #     s = r.rand(0..2)
-  #     if s == 0 then
-  #       quote['attribution'] = 'trump'
-  #     else if s == 1 then
-  #       quote['attribution'] = 'other'
-  #     else
-  #       quote['attribution'] = 'none'
-  #     end
-  #     value.push(s)
-  #   end
-  #   return value
-  # end
 end
