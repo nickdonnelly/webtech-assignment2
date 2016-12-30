@@ -45,7 +45,12 @@ html
   font-weight: 500
   font-size: 1.15em
   padding-top: 0.35em
-  background: url('../img/trump-welcome.jpg') no-repeat center center fixed
+  height: 100% // Fixes android
+  min-height: 100%
+  background-image: url('../img/trump-welcome.jpg')
+  background-repeat: no-repeat
+  background-attachment: fixed
+  background-position: center bottom
   background-size: cover
   filter: alpha(opacity=50)
 

@@ -60,9 +60,9 @@ class ApiController < ApplicationController
     response = {}
     if type then
       # render json: 'trump-right-' + n.to_s + '.jpg'
-      response['value'] = 'trump-right-' + n.to_s + '.jpg'
+      response['value'] = 'assets/img/trump-right-' + n.to_s + '.jpg'
     else
-      response['value'] = 'trump-wrong-' + n.to_s + '.jpg'
+      response['value'] = 'assets/img/trump-wrong-' + n.to_s + '.jpg'
     end
     render json: response
   end
@@ -91,18 +91,22 @@ class ApiController < ApplicationController
 
   def generate_quote_json(n)
     value = []
+    selected = [] # this will store the ones that have been picked, so we dont send duplicates.
     r = Random.new
     for i in 1..n do
       quote = {}
       s = r.rand(0..2)
       if s == 0 then
-        quote['text'] = QUOTES['trump'].sample
+        quote['text'] = (QUOTES['trump'] - selected).sample
+        selected.push(quote['text'])
         quote['attribution'] = 'trump'
       elsif s == 1 then
-        quote['text'] = QUOTES['other'].sample
+        quote['text'] = (QUOTES['other'] - selected).sample
+        selected.push(quote['text'])
         quote['attribution'] = 'other'
       else
-        quote['text'] = QUOTES['none'].sample
+        quote['text'] = (QUOTES['none'] - selected).sample
+        selected.push(quote['text'])
         quote['attribution'] = 'none'
       end
 
