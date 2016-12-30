@@ -1,5 +1,5 @@
 // API STUFF
-var API_BASE_URL = 'http://localhost:3000/api/revision1/';
+var API_BASE_URL = 'http://trump-api.herokuapp.com/api/revision1/';
 
 var trump_intro = 'trump-welcome.jpg';
 
