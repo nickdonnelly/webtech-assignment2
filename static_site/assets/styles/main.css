@@ -67,7 +67,7 @@ html {
   text-transform: uppercase;
   text-align: center;
   vertical-align: middle;
-  background: #2ECC71;
+  background: #2bEF1E;
   height: 5em;
   line-height: 5em;
   -webkit-transition: all 0.2s ease-in-out;
@@ -87,14 +87,14 @@ html {
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.75);
   text-decoration: none;
   margin: 0.15em auto;
-  border: 1px inset #36D7B7;
+  border: 1px inset #17BF24;
   font-weight: 700;
   cursor: pointer;
   color: #000000; }
   .button:hover {
     text-decoration: none;
-    background: #36D7B7;
-    border: 1px inset #2ECC71;
+    background: #17BF24;
+    border: 1px inset #2bEF1E;
     -webkit-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
     -ms-transition: all 0.3s ease-in-out;
@@ -102,19 +102,19 @@ html {
     transition: all 0.3s ease-in-out; }
 
 .buttonred {
-  background: #CF000F !important;
-  border: 1px inset #f13939 !important; }
+  background: #EF1818 !important;
+  border: 1px inset #B11212 !important; }
   .buttonred:hover {
-    background: #f13939 !important;
-    border: 1px inset #CF000F !important; }
+    background: #B11212 !important;
+    border: 1px inset #EF1818 !important; }
 
 .buttondark {
-  background: #555 !important;
-  border: 1px inset #333 !important;
+  background: #0956CA !important;
+  border: 1px inset #0443A0 !important;
   color: white !important; }
   .buttondark:hover {
-    background: #333 !important;
-    border: 1px inset #555 !important; }
+    background: #0443A0 !important;
+    border: 1px inset #0956CA !important; }
 
 h1 {
   font-size: 3.2em;
@@ -173,7 +173,7 @@ h2 {
 
 .question-container {
   display: none;
-  background: #5c51e7;
+  background: #1abaeb;
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   -ms-transition: all 0.2s ease-in-out;
@@ -190,9 +190,10 @@ h2 {
   -o-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.75);
   width: 90%;
+  max-height: 90%;
   margin: 2% 5%;
   padding: 0.7em 0.3em;
-  border: 1px solid ligten(#5c51e7, 70%);
+  border: 1px solid ligten(#1abaeb, 70%);
   text-overflow: clip; }
 
 #question-counter {
@@ -244,12 +245,12 @@ h2 {
     text-shadow: 2px 2px 4px #333333; }
 
 .correct {
-  background: #2ECC71 !important;
-  color: #d1f5e0 !important; }
+  background: #2bEF1E !important;
+  color: #defddc !important; }
 
 .incorrect {
-  background: #CF000F !important;
-  color: #ff9ca3 !important; }
+  background: #EF1818 !important;
+  color: #fcd7d7 !important; }
 
 #correct-answer-reveal {
   color: #b3b3b3;
@@ -280,6 +281,9 @@ h2 {
   -o-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.75); }
 
+#endgame-quote {
+  font-size: 2em; }
+
 #game-over-heading {
   color: white;
   text-shadow: 2px 2px 4px #333333; }
@@ -288,7 +292,7 @@ h2 {
   color: #bfbfbf; }
 
 #scorenum {
-  color: #f13939; }
+  color: #B11212; }
 
 .mega {
   font-size: 13em; }

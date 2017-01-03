@@ -78,10 +78,12 @@ function requestQuestions(){
 }
 
 function queueQuestion(){
+  if(rounds_played - 1 < 10){
     correct_answer = all_questions[rounds_played - 1].attribution;
     current_quote = all_questions[rounds_played - 1].text;
-  $('#question-counter').text("Question " + rounds_played +" of 10");
-  $('#quote').text('"' + current_quote + '"');
+    $('#question-counter').text("Question " + rounds_played +" of 10");
+    $('#quote').text('"' + current_quote + '"');
+  }
 }
 
 function showCorrect(){
@@ -102,7 +104,14 @@ function showCorrect(){
   $('.next-question-container').removeClass('incorrect');
   img_str = "assets/img/trump-right-" + (Math.floor(Math.random() * 3) + 1) + ".jpg"
   $('#between-img').attr("src", img_str);
-  if(rounds_played > 10) $('#next-question').text("Show my score");
+  if(rounds_played > 10){
+    var jReq = $.get(API_BASE_URL + 'endgame/' + score, function(data){
+      if(!data.error){
+        $('#endgame-quote').text(data.value);
+      }
+    });
+    $('#next-question').text("Show my score");
+  }
   $('.question-container').hide('fast');
   $('.next-question-container').show('fast');
 }
@@ -121,7 +130,14 @@ function showIncorrect(){
   $('#correct-answer-reveal').text("It was said by " + getCorString(correct_answer) + ".");
   $('.next-question-container').removeClass('correct');
   $('.next-question-container').addClass('incorrect');
-  if(rounds_played > 10) $('#next-question').text("Show my score");
+  if(rounds_played > 10){
+    var kReq = $.get(API_BASE_URL + 'endgame/' + score, function(data){
+      if(!data.error){
+        $('#endgame-quote').text(data.value);
+      }
+    });
+    $('#next-question').text("Show my score");
+  }
   $('.question-container').hide('fast');
   $('.next-question-container').show('fast');
 }

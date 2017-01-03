@@ -3,14 +3,14 @@
 
 $color-dark-blue: #446CB3
 $color-light-blue: #59ABE3
-$color-red: #CF000F
-$color-red-hover: #f13939
-$color-turquoise: #36D7B7
-$color-green: #2ECC71
+$color-red: #EF1818
+$color-red-hover: #B11212
+$color-turquoise: #17BF24
+$color-green: #2bEF1E
 $color-button-text: #000000
-$color-dark: #555
-$color-dark-hover: #333
-$color-question-background: #5c51e7
+$color-dark: #0956CA
+$color-dark-hover: #0443A0
+$color-question-background: darken(#49c8ef, 10%)
 
 
 // MIXIN DEFINITIONS
@@ -165,6 +165,7 @@ h2
   +border-radius(8px)
   +magic-box-shadow
   width: 90%
+  max-height: 90%
   margin: 2% 5%
   padding: 0.7em 0.3em
   border: 1px solid ligten($color-question-background, 70%)
@@ -224,6 +225,9 @@ h2
   color: white
   +border-radius(8px)
   +magic-box-shadow
+
+#endgame-quote
+  font-size: 2em
 
 #game-over-heading
   color: white
