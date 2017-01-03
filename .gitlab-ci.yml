@@ -2,10 +2,10 @@ pages:
   stage: deploy
   script:
   - mkdir .public
-  - cp -r /static_site/* .public
+  - cp -r * .public
   - mv .public public
   artifacts:
     paths:
     - public
   only:
-  - master
+  - pages
