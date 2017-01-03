@@ -1,0 +1,243 @@
+// COLOR DEFINITIONS
+@import reset
+
+$color-dark-blue: #446CB3
+$color-light-blue: #59ABE3
+$color-red: #EF1818
+$color-red-hover: #B11212
+$color-turquoise: #17BF24
+$color-green: #2bEF1E
+$color-button-text: #000000
+$color-dark: #0956CA
+$color-dark-hover: #0443A0
+$color-question-background: darken(#49c8ef, 10%)
+
+
+// MIXIN DEFINITIONS
+=border-radius($rad)
+  -webkit-border-radius: $rad
+  -o-border-radius: $rad
+  -moz-border-radius: $rad
+  -ms-border-radius: $rad
+  border-radius: $rad
+
+=transition($elem, $time, $animation-function)
+  -webkit-transition: $elem $time $animation-function
+  -o-transition: $elem $time $animation-function
+  -ms-transition: $elem $time $animation-function
+  -moz-transition: $elem $time $animation-function
+  transition: $elem $time $animation-function
+
+
+=magic-box-shadow()
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75)
+  -moz-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75)
+  -ms-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75)
+  -o-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75)
+  box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75)
+
+=text-shadow()
+  text-shadow: 2px  2px 4px darken(white, 80%)
+
+
+html
+  font-family: 'Open Sans', sans-serif
+  font-weight: 500
+  font-size: 1.15em
+  padding-top: 0.35em
+  height: 100% // Fixes android
+  min-height: 100%
+  background-image: url('../img/trump-welcome.jpg')
+  background-repeat: no-repeat
+  background-attachment: fixed
+  background-position: center bottom
+  background-size: cover
+  filter: alpha(opacity=50)
+
+
+.wrapper
+  opacity: 0
+  transform: translateY(50px)
+  +transition(all, 0.8s, ease-in-out)
+  margin: 0 auto
+  padding-top: 3em
+
+.button
+  display: inline-block
+  text-transform: uppercase
+  text-align: center
+  vertical-align: middle
+  background: $color-green
+  height: 5em
+  line-height: 5em
+  +transition(all, 0.2s, ease-in-out)
+  +border-radius(5px)
+  +magic-box-shadow
+  text-decoration: none
+  margin: 0.15em auto
+  border: 1px inset $color-turquoise
+  font-weight: 700
+  cursor: pointer
+  color: $color-button-text
+
+
+  &:hover
+    text-decoration: none
+    background: $color-turquoise
+    border: 1px inset $color-green
+    +transition(all, 0.3s, ease-in-out)
+
+.buttonred
+  background: $color-red !important
+  border: 1px inset $color-red-hover !important
+
+  &:hover
+    background: $color-red-hover !important
+    border: 1px inset $color-red !important
+
+.buttondark
+  background: $color-dark !important
+  border: 1px inset $color-dark-hover !important
+  color: white !important
+  &:hover
+    background: $color-dark-hover !important
+    border: 1px inset $color-dark !important
+
+h1
+  font-size: 3.2em
+  text-align: center
+  vertical-align: middle
+h2
+  font-size: 3.0em
+  text-align: center
+  vertical-align: middle
+  color: white
+  +text-shadow
+
+// MOBILE MODIFIERS FOR STANDARD STYLES
+@media only screen and (min-device-width: 768px)
+  .wrapper
+    max-width: 80%
+
+@media only screen and (min-device-width: 1280px)
+  .wrapper
+    max-width: 60%
+
+
+
+@media only screen and (min-device-width: 0px) and (max-device-width: 500px) and (orientation: portrait)
+  .button
+    height: 8em
+    line-height: 8em
+    font-size: 3.0em
+  .choice-button
+    height: 5em
+    line-height: 5em
+  h1
+    font-size: 4em
+
+@media only screen and (max-device-width: 425px) and (orientation: portrait)
+  .button
+    height: 9em
+    line-height: 9em
+    font-size: 3.5em
+  .choice-button
+    height: 6em
+    line-height: 6em
+
+
+// NONGENERIC STYLES
+.begin-container
+  +transition(all, 0.2s, ease-in-out)
+
+.begin-header
+  color: lighten(#e6e6e6, 40%)
+  text-shadow: 2px  2px 4px darken(white, 80%)
+
+.begin-button
+  width: 90%
+  margin: 2% 5%
+
+.question-container
+  display: none
+  background: $color-question-background
+  +transition(all, 0.2s, ease-in-out)
+  +border-radius(8px)
+  +magic-box-shadow
+  width: 90%
+  max-height: 90%
+  margin: 2% 5%
+  padding: 0.7em 0.3em
+  border: 1px solid ligten($color-question-background, 70%)
+  text-overflow: clip
+
+#question-counter
+  color: lighten(black, 20%)
+  font-weight: 700
+  text-align: center
+  font-size: 1.4em
+  opacity: 0.7
+  +text-shadow
+
+.choice-button
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-direction: column
+  margin-top: 0.5em
+  margin-left: 0
+  margin-right: 0
+
+.next-button
+  width: 94%
+  margin: 2% 3%
+
+.next-question-container
+  display: none
+  background: $color-light-blue
+  color: white
+  +magic-box-shadow
+  +border-radius(8px)
+  width: 90%
+  margin: 2% 5%
+  h1
+    +text-shadow
+.correct
+  background: $color-green !important
+  color: lighten($color-green, 40%) !important
+.incorrect
+  background: $color-red !important
+  color: lighten($color-red, 40%) !important
+
+#correct-answer-reveal
+  color: lighten(black, 70%)
+  font-size: 2em
+
+#between-img
+  width: 90%
+  +border-radius(5px)
+  border: 1px solid $color-dark-blue
+  margin: 0 5%
+
+.game-over-container
+  display: none
+  background: $color-light-blue
+  color: white
+  +border-radius(8px)
+  +magic-box-shadow
+
+#endgame-quote
+  font-size: 2em
+
+#game-over-heading
+  color: white
+  +text-shadow
+
+#final-score
+  color: darken(white, 25%)
+
+#scorenum
+  color: $color-red-hover
+
+.mega
+  font-size: 13em
